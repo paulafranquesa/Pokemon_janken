@@ -6,7 +6,7 @@ HTML・CSS・JavaScriptで制作した、ポケモン風のじゃんけんバト
 
 ## Play Online / オンラインプレイ
 
-https://TU-USUARIO.github.io/TU-REPOSITORIO/
+https://paulafranquesa.github.io/Pokemon_janken/
 
 ---
 
