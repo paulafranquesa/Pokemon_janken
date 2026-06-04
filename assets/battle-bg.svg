@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ec8f8"/>
+      <stop offset="55%" stop-color="#a8e0ff"/>
+      <stop offset="100%" stop-color="#c8eeff"/>
+    </linearGradient>
+    <linearGradient id="hill-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ab04c"/>
+      <stop offset="100%" stop-color="#4a8f38"/>
+    </linearGradient>
+    <linearGradient id="hill-mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#78c850"/>
+      <stop offset="100%" stop-color="#58a838"/>
+    </linearGradient>
+    <linearGradient id="grass-main" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#88d060"/>
+      <stop offset="100%" stop-color="#68b848"/>
+    </linearGradient>
+    <linearGradient id="platform" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#98e070"/>
+      <stop offset="100%" stop-color="#70c050"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="0.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Cielo -->
+  <rect width="960" height="540" fill="url(#sky)"/>
+
+  <!-- Nubes -->
+  <g fill="#fff" opacity="0.92">
+    <ellipse cx="180" cy="72" rx="52" ry="22"/>
+    <ellipse cx="220" cy="68" rx="38" ry="18"/>
+    <ellipse cx="145" cy="78" rx="32" ry="16"/>
+    <ellipse cx="720" cy="95" rx="44" ry="20"/>
+    <ellipse cx="765" cy="90" rx="36" ry="17"/>
+    <ellipse cx="690" cy="100" rx="28" ry="14"/>
+    <ellipse cx="480" cy="55" rx="36" ry="15" opacity="0.7"/>
+  </g>
+
+  <!-- Montañas lejanas -->
+  <path fill="#8ab8d0" opacity="0.55" d="M0 220 L120 140 L240 200 L380 120 L520 190 L660 110 L800 175 L960 130 L960 320 L0 320 Z"/>
+
+  <!-- Colinas fondo -->
+  <path fill="url(#hill-far)" d="M0 280 Q240 200 480 250 T960 230 L960 400 L0 400 Z"/>
+  <path fill="url(#hill-mid)" d="M0 320 Q200 260 420 300 T960 290 L960 420 L0 420 Z"/>
+
+  <!-- Árbol derecho -->
+  <g transform="translate(780, 195)">
+    <rect x="28" y="55" width="18" height="42" fill="#8b5a2b"/>
+    <ellipse cx="37" cy="48" rx="52" ry="44" fill="#48a030"/>
+    <ellipse cx="37" cy="38" rx="42" ry="36" fill="#58b838"/>
+    <ellipse cx="28" cy="52" rx="22" ry="20" fill="#68c848" opacity="0.8"/>
+  </g>
+
+  <!-- Arbusto izquierdo -->
+  <g transform="translate(95, 310)">
+    <ellipse cx="0" cy="0" rx="34" ry="22" fill="#50a838"/>
+    <ellipse cx="-8" cy="-4" rx="20" ry="14" fill="#68c050"/>
+    <ellipse cx="12" cy="-2" rx="18" ry="13" fill="#60b848"/>
+  </g>
+
+  <!-- Cerca -->
+  <g transform="translate(620, 268)" fill="#a07040" stroke="#704820" stroke-width="1">
+    <rect x="0" y="18" width="6" height="22"/><rect x="14" y="18" width="6" height="22"/>
+    <rect x="28" y="18" width="6" height="22"/><rect x="42" y="18" width="6" height="22"/>
+    <rect x="-4" y="22" width="58" height="5"/><rect x="-4" y="32" width="58" height="5"/>
+  </g>
+
+  <!-- Pradera principal -->
+  <path fill="url(#grass-main)" d="M0 360 Q320 330 480 345 T960 355 L960 540 L0 540 Z"/>
+
+  <!-- Detalle hierba (líneas) -->
+  <g stroke="#58a838" stroke-width="2" stroke-linecap="round" opacity="0.45">
+    <line x1="40" y1="420" x2="38" y2="408"/><line x1="80" y1="435" x2="78" y2="422"/>
+    <line x1="200" y1="410" x2="198" y2="398"/><line x1="350" y1="445" x2="348" y2="432"/>
+    <line x1="550" y1="418" x2="548" y2="405"/><line x1="700" y1="440" x2="698" y2="427"/>
+    <line x1="850" y1="415" x2="848" y2="402"/><line x1="920" y1="430" x2="918" y2="417"/>
+  </g>
+
+  <!-- Flores -->
+  <g>
+    <circle cx="120" cy="430" r="5" fill="#fff"/><circle cx="120" cy="430" r="2" fill="#f8e878"/>
+    <circle cx="280" cy="455" r="4" fill="#fff"/><circle cx="280" cy="455" r="1.5" fill="#f0a0c0"/>
+    <circle cx="440" cy="438" r="5" fill="#fff"/><circle cx="440" cy="438" r="2" fill="#f8e878"/>
+    <circle cx="600" cy="460" r="4" fill="#fff"/><circle cx="600" cy="460" r="1.5" fill="#c0e8ff"/>
+    <circle cx="780" cy="445" r="5" fill="#fff"/><circle cx="780" cy="445" r="2" fill="#f8e878"/>
+  </g>
+
+  <!-- Plataforma rival (arriba derecha) -->
+  <ellipse cx="700" cy="268" rx="118" ry="32" fill="#509030" opacity="0.35"/>
+  <ellipse cx="700" cy="262" rx="105" ry="28" fill="url(#platform)" stroke="#489028" stroke-width="2"/>
+
+  <!-- Plataforma jugador (abajo izquierda) -->
+  <ellipse cx="220" cy="398" rx="135" ry="36" fill="#509030" opacity="0.35"/>
+  <ellipse cx="220" cy="392" rx="120" ry="32" fill="url(#platform)" stroke="#489028" stroke-width="2"/>
+
+  <!-- Brillo césped primer plano -->
+  <path fill="#98e070" opacity="0.25" d="M0 480 Q240 460 480 475 T960 468 L960 540 L0 540 Z"/>
+</svg>

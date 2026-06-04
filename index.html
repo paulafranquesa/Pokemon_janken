@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>じゃんけんバトル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="audio-controls" role="group" aria-label="音声設定">
+    <button id="btn-music" class="btn-music" type="button" aria-pressed="false" title="BGMのオン／オフ">♪ OFF</button>
+    <label class="volume-control" for="volume-slider">
+      <span class="volume-label">音量</span>
+      <input
+        id="volume-slider"
+        type="range"
+        min="0"
+        max="100"
+        value="45"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="45"
+      />
+    </label>
+  </div>
+
+  <div id="app">
+    <section id="screen-select" class="screen active">
+      <div class="select-panel">
+        <h1 class="title">じゃんけんバトル</h1>
+        <p class="subtitle">なかまを えらんでね（♪ と 音量は みぎうえ）</p>
+        <div id="skin-grid" class="skin-grid" role="listbox" aria-label="えらべるなかま"></div>
+        <button id="btn-start" class="btn-primary" disabled>バトル開始！</button>
+      </div>
+    </section>
+
+    <section id="screen-battle" class="screen" hidden>
+      <div class="battle-stage">
+        <div class="battle-bg" role="img" aria-label="バトルフィールド"></div>
+
+        <div class="hud hud-enemy">
+          <div class="hud-box">
+            <span class="hud-label">あいて</span>
+            <div class="hp-bar">
+              <div class="hp-fill" id="enemy-hp-fill"></div>
+            </div>
+            <span class="hp-text" id="enemy-score">0</span>
+          </div>
+        </div>
+
+        <img
+          id="sprite-enemy"
+          class="sprite sprite-enemy"
+          src="enemy1.png"
+          alt="あいて"
+          draggable="false"
+        />
+
+        <img
+          id="sprite-user"
+          class="sprite sprite-user"
+          src="user1.png"
+          alt="じぶんのなかま"
+          draggable="false"
+        />
+
+        <div class="hud hud-player">
+          <div class="hud-box">
+            <span class="hud-label">じぶん</span>
+            <div class="hp-bar">
+              <div class="hp-fill hp-fill-player" id="user-hp-fill"></div>
+            </div>
+            <span class="hp-text" id="user-score">0</span>
+          </div>
+        </div>
+
+        <div class="battle-ui">
+          <button
+            id="message-box"
+            type="button"
+            class="message-box"
+            aria-label="バトルメッセージ。クリックでつづける。"
+          >
+            <p id="message-text">どうする？</p>
+            <span id="message-hint" class="message-hint" hidden>▼ クリックしてつづける</span>
+          </button>
+
+          <div id="menu-fight" class="menu menu-fight">
+            <button class="cmd-btn" data-move="rock">
+              <span class="cmd-emoji" aria-hidden="true">✊</span>
+              <span class="cmd-label">グー</span>
+            </button>
+            <button class="cmd-btn" data-move="paper">
+              <span class="cmd-emoji" aria-hidden="true">✋</span>
+              <span class="cmd-label">パー</span>
+            </button>
+            <button class="cmd-btn" data-move="scissors">
+              <span class="cmd-emoji" aria-hidden="true">✌️</span>
+              <span class="cmd-label">チョキ</span>
+            </button>
+          </div>
+
+          <div id="menu-result" class="menu menu-result" hidden>
+            <button id="btn-next-round" class="btn-primary btn-small">もういちど</button>
+            <button id="btn-change-skin" class="btn-secondary btn-small">なかまをかえる</button>
+          </div>
+        </div>
+
+        <div id="end-overlay" class="end-overlay" hidden aria-hidden="true">
+          <div class="end-panel">
+            <p id="end-title" class="end-title"></p>
+            <button id="btn-play-again" type="button" class="btn-primary btn-play-again">PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/game.js" type="module"></script>
+</body>
+</html>
